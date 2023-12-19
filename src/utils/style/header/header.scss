@@ -1,0 +1,28 @@
+@import "../variables/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+  height: 68px;
+
+  &__logo {
+    &-img {
+      margin-right: 10px;
+    }
+  }
+  &__nav {
+    &-Link {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 34px;
+      color: $accentText;
+      text-decoration: none;
+      padding-left: 57px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

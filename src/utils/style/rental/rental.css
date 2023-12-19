@@ -1,0 +1,122 @@
+.rental__carousel {
+  width: 100%;
+  height: 415px;
+  position: relative;
+  z-index: 0;
+}
+.rental__carousel-picture {
+  width: 100%;
+  height: 415px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px;
+  z-index: 0;
+}
+.rental__carousel-arrow {
+  width: 100%;
+  height: 415px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+}
+.rental__carousel-arrow-prev, .rental__carousel-arrow-next {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.rental__carousel-arrow-prev {
+  left: 0;
+}
+.rental__carousel-arrow-next {
+  right: 0;
+}
+.rental__carousel-counter {
+  position: absolute;
+  z-index: 3;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: white;
+  padding-bottom: 10px;
+}
+.rental__info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.rental__info-text-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51px;
+  color: #ff6060;
+}
+.rental__info-text-location {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #ff6060;
+}
+.rental__info-host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rental__info-host-name {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #ff6060;
+  max-width: 93px;
+  text-align: right;
+  padding-right: 10px;
+}
+.rental__info-host-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.rental__info2 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.rental__info2-tagsList {
+  display: flex;
+  min-width: 35%;
+  justify-content: space-between;
+}
+.rental__info2-tagsList-tag {
+  min-width: 115px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 25px;
+  border-radius: 10px;
+  background-color: #ff6060;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rental__info2-rating {
+  width: 196px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}/*# sourceMappingURL=rental.css.map */
