@@ -2,10 +2,6 @@ import { Link } from "react-router-dom"
 import { rentals } from "../../utils/data/rentals.js"
 
 function Cards({ sectionName }) {
-  const handleClick = (id) => {
-    console.log("click on : ", id)
-  }
-
   return (
     <section className={sectionName}>
       {rentals.map((rental) => (
@@ -15,7 +11,6 @@ function Cards({ sectionName }) {
           className={sectionName + "-Link"}
         >
           <article
-            onClick={() => handleClick(rental.id)}
             className={sectionName + "-Link-article"}
             style={{ backgroundImage: `url(${rental.cover})` }}
           >

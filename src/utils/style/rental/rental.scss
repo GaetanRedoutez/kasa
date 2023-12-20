@@ -109,11 +109,11 @@
     flex-direction: row;
     justify-content: space-between;
     &-tagsList {
-      display: flex;
-      min-width: 35%;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 15px;
       &-tag {
-        min-width: 115px;
+        min-width: 95px;
         width: fit-content;
         height: 25px;
         border-radius: 10px;
@@ -125,6 +125,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0 10px;
       }
     }
     &-rating {

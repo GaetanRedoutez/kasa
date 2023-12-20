@@ -96,12 +96,13 @@
   justify-content: space-between;
 }
 .rental__info2-tagsList {
-  display: flex;
-  min-width: 35%;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  -moz-column-gap: 15px;
+       column-gap: 15px;
 }
 .rental__info2-tagsList-tag {
-  min-width: 115px;
+  min-width: 95px;
   width: -moz-fit-content;
   width: fit-content;
   height: 25px;
@@ -114,6 +115,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
 }
 .rental__info2-rating {
   width: 196px;
