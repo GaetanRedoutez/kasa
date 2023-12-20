@@ -121,4 +121,23 @@
   width: 196px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+}
+.rental__dropdown {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.rental__dropdown-description, .rental__dropdown-equipments {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  width: 45%;
+  height: 52px;
+  background-color: #ff6060;
+  border: none;
+  border-radius: 10px;
 }/*# sourceMappingURL=rental.css.map */

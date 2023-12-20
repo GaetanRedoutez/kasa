@@ -8,6 +8,7 @@ import filledStar from "../../assets/images/filledStar.svg"
 import Carousel from "../../components/Carousel/index.jsx"
 
 import "../../utils/style/rental/rental.css"
+import DropDown from "../../components/DropDown/index.jsx"
 
 function Rental() {
   const { id } = useParams()
@@ -19,6 +20,7 @@ function Rental() {
   const starArray = initalRating.map((element, index) =>
     index <= ratingNumber - 1 ? filledStar : emptyStar
   )
+  console.log(starArray)
 
   return (
     <div className="content">
@@ -62,9 +64,25 @@ function Rental() {
 
           <div className="rental__info2-rating">
             {starArray.map((star, index) => (
-              <img key={`${star}-${index}`} src={star} alt="rating star" />
+              <img
+                // key={`${star}-${index}`}
+                src={star}
+                alt="rating star"
+              />
             ))}
           </div>
+        </div>
+        <div className="rental__dropdown">
+          <DropDown
+            name="Description"
+            componentClassName="rental__dropdown-description"
+            items={selectedRental.description}
+          />
+          <DropDown
+            name="Equipements"
+            componentClassName="rental__dropdown-equipments"
+            items={selectedRental.equipments}
+          />
         </div>
       </div>
     </div>
