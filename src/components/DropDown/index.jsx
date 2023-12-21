@@ -4,9 +4,12 @@ import upArrow from "../../assets/images/upArrow.svg"
 
 function DropDown({ name, componentClassName, items }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [arrow, setArrow] = useState("")
   const [displayedItem, setDisplayedItem] = useState()
 
-  const arrow = isOpen ? downArrow : upArrow
+  useEffect(() => {
+    isOpen ? setArrow(downArrow) : setArrow(upArrow)
+  }, [isOpen])
 
   useEffect(() => {
     const typeOfItems = typeof items
@@ -20,13 +23,20 @@ function DropDown({ name, componentClassName, items }) {
   }, [items])
 
   return (
-    <button className={`${componentClassName}`}>
-      <div className={`${componentClassName}-name`}>{name}</div>
-      <img src={arrow} alt="" className={`${componentClassName}-arrow`} />
+    <div className={`${componentClassName}`}>
+      <button
+        className={`${componentClassName}-btn`}
+        onClick={() => {
+          setIsOpen(!isOpen)
+        }}
+      >
+        <div className={`${componentClassName}-btn-name`}>{name}</div>
+        <img src={arrow} alt="" className={`${componentClassName}-btn-arrow`} />
+      </button>
       {isOpen ? (
         <ul className={`${componentClassName}-list`}>{displayedItem}</ul>
       ) : null}
-    </button>
+    </div>
   )
 }
 

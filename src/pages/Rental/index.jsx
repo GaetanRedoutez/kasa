@@ -20,7 +20,6 @@ function Rental() {
   const starArray = initalRating.map((element, index) =>
     index <= ratingNumber - 1 ? filledStar : emptyStar
   )
-  console.log(starArray)
 
   return (
     <div className="content">
@@ -64,14 +63,11 @@ function Rental() {
 
           <div className="rental__info2-rating">
             {starArray.map((star, index) => (
-              <img
-                // key={`${star}-${index}`}
-                src={star}
-                alt="rating star"
-              />
+              <img key={`${star}-${index}`} src={star} alt="rating star" />
             ))}
           </div>
         </div>
+
         <div className="rental__dropdown">
           <DropDown
             name="Description"
