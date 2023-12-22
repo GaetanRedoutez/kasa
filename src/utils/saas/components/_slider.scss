@@ -15,7 +15,7 @@
   &__arrow {
     width: 100%;
     height: 415px;
-    display: flex;
+    @include flex-row();
     justify-content: space-between;
     position: absolute;
     top: 0;

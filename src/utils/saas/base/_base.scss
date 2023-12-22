@@ -8,7 +8,6 @@
 html {
   box-sizing: border-box;
   font-family: Montserrat, sans-serif;
-  overflow-x: hidden;
 }
 
 /**
@@ -34,14 +33,13 @@ a {
 .container {
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  @include flex-col();
 }
 
 .content {
   width: 100%;
   max-width: $max-width;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 50px auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -52,20 +50,6 @@ a {
 
 .hidden {
   visibility: hidden;
-}
-
-.fade-in-block {
-  opacity: 1;
-  max-height: 100vh; /* Une valeur suffisamment grande pour couvrir la hauteur maximale possible */
-  overflow: hidden;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
-}
-
-.fade-out-block {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
 ul {

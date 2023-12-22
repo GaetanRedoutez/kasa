@@ -1,9 +1,8 @@
 .footer {
   margin-top: auto;
-  display: flex;
-  flex-direction: column;
+  @include flex-col();
   align-items: center;
-  width: 100vw;
+  width: calc(100vw - (100vw - 100%));
   left: 0;
   height: 210px;
   background-color: $black;

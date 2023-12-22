@@ -316,7 +316,6 @@ template {
 html {
   box-sizing: border-box;
   font-family: Montserrat, sans-serif;
-  overflow-x: hidden;
 }
 
 /**
@@ -349,7 +348,7 @@ a {
 .content {
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 50px auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -360,20 +359,6 @@ a {
 
 .hidden {
   visibility: hidden;
-}
-
-.fade-in-block {
-  opacity: 1;
-  max-height: 100vh; /* Une valeur suffisamment grande pour couvrir la hauteur maximale possible */
-  overflow: hidden;
-  transition: opacity 0.4s ease, max-height 0.4s ease;
-}
-
-.fade-out-block {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
 ul {
@@ -406,7 +391,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: calc(100vw - (100vw - 100%));
   left: 0;
   height: 210px;
   background-color: #000000;
@@ -433,6 +418,15 @@ ul {
   place-items: center;
   padding: 55px 0;
   row-gap: 55px;
+}
+@media (max-width: 800px) {
+  .cards {
+    margin-top: 0px;
+    background-color: #ffffff;
+    grid-template-columns: 1fr;
+    padding: 22px 0;
+    row-gap: 22px;
+  }
 }
 .cards__Link {
   max-width: 340px;
@@ -476,6 +470,11 @@ ul {
   background-position: center;
   height: 220px;
   border-radius: 25px;
+}
+@media (max-width: 800px) {
+  .overlayTitle {
+    height: 110px;
+  }
 }
 .overlayTitle__h2 {
   color: white;
@@ -539,6 +538,7 @@ ul {
   width: 100%;
   height: 415px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   position: absolute;
   top: 0;
@@ -577,9 +577,9 @@ ul {
   margin-top: 0px;
 }
 .dropdown__btn {
-  padding: 0 15px;
   display: flex;
   flex-direction: row;
+  padding: 0 15px;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -591,14 +591,40 @@ ul {
   border: none;
   border-radius: 10px;
 }
+.dropdown__content-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .dropdown__list {
   margin: 0;
-  padding: 10px 20px;
+  padding: 0 20px;
   font-size: 18px;
   line-height: 26px;
   color: #ff6060;
   background-color: #f6f6f6;
   text-align: left;
+  overflow: hidden;
+  transition: height 0.4s ease;
+}
+
+.up {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+.down {
+  transform: rotate(-180deg);
+  transition: transform 0.5s ease;
+}
+
+.toWhite {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  background-color: #f6f6f6;
+}
+
+.light-grey {
+  background-color: #f6f6f6;
 }
 
 .rental__info {
@@ -641,15 +667,15 @@ ul {
      object-fit: cover;
 }
 .rental__info2 {
-  margin: 20px 0;
   display: flex;
   flex-direction: row;
+  margin: 20px 0;
   justify-content: space-between;
 }
 .rental__dropdown {
-  width: 100%;
   display: flex;
   flex-direction: row;
+  width: 100%;
   -moz-column-gap: 10%;
        column-gap: 10%;
 }

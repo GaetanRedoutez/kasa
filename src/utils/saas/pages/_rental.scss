@@ -2,8 +2,7 @@
   &__info {
     margin-top: 20px;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
+    @include flex-row();
     align-items: center;
     justify-content: space-between;
     color: $primary-color;
@@ -40,16 +39,14 @@
     }
   }
   &__info2 {
+    @include flex-row();
     margin: 20px 0;
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
   }
 
   &__dropdown {
+    @include flex-row();
     width: 100%;
-    display: flex;
-    flex-direction: row;
     column-gap: 10%;
   }
 }

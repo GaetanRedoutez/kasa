@@ -1,8 +1,11 @@
 .overlayTitle {
-  background-size: cover;
-  background-position: center;
+  @include background-cover();
   height: 220px;
   border-radius: 25px;
+  @include respond-to("small") {
+    height: 110px;
+  }
+
   &__h2 {
     color: white;
     font-size: 48px;

@@ -1,41 +1,25 @@
-import { useEffect, useState } from "react"
-import downArrow from "../../assets/images/downArrow.svg"
-import upArrow from "../../assets/images/upArrow.svg"
+import { useEffect, useState, useRef } from "react"
+import arrow from "../../assets/images/arrow.svg"
 
 function DropDown({ name, componentClassName, items }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [arrow, setArrow] = useState("")
-  const [displayedItem, setDisplayedItem] = useState()
-  const [displayClass, setDisplayClass] = useState("fade-out-block")
+  const [height, setHeight] = useState(0)
+  const contentRef = useRef(null)
 
   useEffect(() => {
-    isOpen ? setArrow(downArrow) : setArrow(upArrow)
-  }, [isOpen])
+    setHeight(isOpen ? contentRef.current.scrollHeight : 0)
+  }, [isOpen, items])
 
-  useEffect(() => {
-    isOpen
-      ? setDisplayClass("fade-in-block")
-      : setDisplayClass("fade-out-block")
-  }, [isOpen])
-
-  useEffect(() => {
-    const typeOfItems = typeof items
-    if (typeOfItems === "string") {
-      setDisplayedItem(items)
-    } else if (typeOfItems === "object") {
-      setDisplayedItem(
-        items.map((item, index) => <li key={`${index}`}>{item}</li>)
-      )
-    }
-  }, [items])
+  const displayedItem =
+    typeof items === "object"
+      ? items.map((item, index) => <li key={`${index}`}>{item}</li>)
+      : items
 
   return (
     <div className={`${componentClassName} dropdown`}>
       <button
         className={`${componentClassName}__btn dropdown__btn`}
-        onClick={() => {
-          setIsOpen(!isOpen)
-        }}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <div className={`${componentClassName}__btn-name dropdown__btn-name`}>
           {name}
@@ -43,16 +27,25 @@ function DropDown({ name, componentClassName, items }) {
         <img
           src={arrow}
           alt=""
-          className={`${componentClassName}__btn-arrow dropdown__btn-arrow`}
+          className={`${componentClassName}__btn-arrow dropdown__btn-arrow ${
+            isOpen ? "up" : "down"
+          }`}
         />
       </button>
 
-      <ul
-        className={`${componentClassName}__list dropdown__list ${displayClass}`}
+      <div
+        className={`dropdown__content-wrapper ${
+          isOpen ? "light-grey" : "toWhite"
+        }`}
       >
-        {displayedItem}
-      </ul>
-      {}
+        <ul
+          ref={contentRef}
+          className={`${componentClassName}__list dropdown__list`}
+          style={{ height: `${height}px` }}
+        >
+          {displayedItem}
+        </ul>
+      </div>
     </div>
   )
 }
