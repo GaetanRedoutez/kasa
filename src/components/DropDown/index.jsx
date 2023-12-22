@@ -6,9 +6,16 @@ function DropDown({ name, componentClassName, items }) {
   const [isOpen, setIsOpen] = useState(false)
   const [arrow, setArrow] = useState("")
   const [displayedItem, setDisplayedItem] = useState()
+  const [displayClass, setDisplayClass] = useState("fade-out-block")
 
   useEffect(() => {
     isOpen ? setArrow(downArrow) : setArrow(upArrow)
+  }, [isOpen])
+
+  useEffect(() => {
+    isOpen
+      ? setDisplayClass("fade-in-block")
+      : setDisplayClass("fade-out-block")
   }, [isOpen])
 
   useEffect(() => {
@@ -23,19 +30,29 @@ function DropDown({ name, componentClassName, items }) {
   }, [items])
 
   return (
-    <div className={`${componentClassName}`}>
+    <div className={`${componentClassName} dropdown`}>
       <button
-        className={`${componentClassName}-btn`}
+        className={`${componentClassName}__btn dropdown__btn`}
         onClick={() => {
           setIsOpen(!isOpen)
         }}
       >
-        <div className={`${componentClassName}-btn-name`}>{name}</div>
-        <img src={arrow} alt="" className={`${componentClassName}-btn-arrow`} />
+        <div className={`${componentClassName}__btn-name dropdown__btn-name`}>
+          {name}
+        </div>
+        <img
+          src={arrow}
+          alt=""
+          className={`${componentClassName}__btn-arrow dropdown__btn-arrow`}
+        />
       </button>
-      {isOpen ? (
-        <ul className={`${componentClassName}-list`}>{displayedItem}</ul>
-      ) : null}
+
+      <ul
+        className={`${componentClassName}__list dropdown__list ${displayClass}`}
+      >
+        {displayedItem}
+      </ul>
+      {}
     </div>
   )
 }

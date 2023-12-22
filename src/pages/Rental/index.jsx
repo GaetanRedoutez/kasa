@@ -30,9 +30,9 @@ function Rental() {
       />
 
       <div className="rental__info">
-        <div className="rental__info-text">
-          <h2 className="rental__info-text-title">{selectedRental.title}</h2>
-          <span className="rental__info-text-location">
+        <div className="rental__info--text">
+          <h2 className="rental__info--text-title">{selectedRental.title}</h2>
+          <span className="rental__info--text-location">
             {selectedRental.location}
           </span>
         </div>

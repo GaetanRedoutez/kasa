@@ -1,0 +1,12 @@
+.about {
+  &__dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 20px;
+    width: 80%;
+    margin: 30px auto 0 auto;
+    padding: 0;
+  }
+}
