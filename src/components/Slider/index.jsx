@@ -24,30 +24,36 @@ function Carousel({ selectedRental, componentClassName }) {
     setArrayImageLength(carouselImage.length === 1 ? 1 : carouselImage.length)
   }, [carouselImage])
 
+  const displayElement = arrayImageLength === 1 ? "hidden" : "visible"
+
   return (
-    <div className={`${componentClassName}`}>
+    <div className={`${componentClassName} slider`}>
       <img
         src={carouselImage[carouselIndex]}
         alt={`${selectedRental.title}`}
-        className={`${componentClassName}-picture`}
+        className={`${componentClassName}-picture slider__picture`}
       />
 
-      <div className={`${componentClassName}-arrow`}>
+      <div
+        className={`${componentClassName}-arrow slider__arrow ${displayElement}`}
+      >
         <button
-          className={`${componentClassName}-arrow-prev`}
+          className={`${componentClassName}-arrow-prev slider__arrow-prev`}
           onClick={prevIndex}
         >
           <img src={leftArrowDesktop} alt="Previous" />
         </button>
         <button
-          className={`${componentClassName}-arrow-next`}
+          className={`${componentClassName}-arrow-next slider__arrow-next`}
           onClick={nextIndex}
         >
           <img src={rightArrowDesktop} alt="Next" />
         </button>
       </div>
 
-      <div className={`${componentClassName}-counter`}>
+      <div
+        className={`${componentClassName}-counter slider__counter ${displayElement}`}
+      >
         {carouselIndex + 1}/{arrayImageLength}
       </div>
     </div>

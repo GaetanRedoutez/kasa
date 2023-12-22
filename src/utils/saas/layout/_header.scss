@@ -1,11 +1,9 @@
-@import "../variables/variables.scss";
-
 .header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 100px;
-  height: 68px;
+  padding: 40px 0;
 
   &__logo {
     &-img {
@@ -16,8 +14,7 @@
     &-Link {
       font-size: 24px;
       font-weight: 500;
-      line-height: 34px;
-      color: $accentText;
+      color: $primary-color;
       text-decoration: none;
       padding-left: 57px;
       &:hover {

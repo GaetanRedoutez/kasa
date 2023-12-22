@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import Root from "./routes/root"
 
-import "./utils/style/index.css"
+import "./utils/saas/main.css"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(

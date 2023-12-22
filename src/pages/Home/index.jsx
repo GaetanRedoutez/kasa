@@ -1,15 +1,12 @@
 import Cards from "../../components/Cards"
-import "../../utils/style/home/home.css"
+import OverlayTitle from "../../components/OverlayTitle"
+import Image from "../../assets/images/home.svg"
 
 function Home() {
   return (
-    <div className="content">
-      <div className="home">
-        <div className="home__title">
-          <h2 className="home__title-h2">Chez vous, partout et ailleurs</h2>
-        </div>
-        <Cards sectionName={"home__section"} />
-      </div>
+    <div className="home">
+      <OverlayTitle title="Chez vous, partout et ailleurs" background={Image} />
+      <Cards />
     </div>
   )
 }

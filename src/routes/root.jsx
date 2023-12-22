@@ -10,16 +10,20 @@ import Rental from "../pages/Rental"
 
 function Root() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/rental/:id" element={<Rental />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-      {/* <Footer /> */}
-    </Router>
+    <div className="container">
+      <Router>
+        <div className="content">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/rental/:id" element={<Rental />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </div>
   )
 }
 

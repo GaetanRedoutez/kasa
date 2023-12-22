@@ -1,20 +1,18 @@
 import { Link } from "react-router-dom"
 
-import DesktopK from "../../assets/logo/DesktopK.svg"
-import DesktopIconA from "../../assets/logo/DesktopIconA.svg"
-import DesktopS from "../../assets/logo/DesktopS.svg"
-import DesktopA from "../../assets/logo/DesktopA.svg"
-
-import "../../utils/style/header/header.css"
+import K from "../../assets/logo/redK.svg"
+import ALogo from "../../assets/logo/redLogo.svg"
+import S from "../../assets/logo/redS.svg"
+import A from "../../assets/logo/redA.svg"
 
 function Header() {
   return (
     <header className="header">
       <div className="header__logo">
-        <img src={DesktopK} alt="K" className="header__logo-img" />
-        <img src={DesktopIconA} alt="A Icon" className="header__logo-img" />
-        <img src={DesktopS} alt="S" className="header__logo-img" />
-        <img src={DesktopA} alt="A" className="header__logo-img" />
+        <img src={K} alt="A Logo" className="header__logo-img" />
+        <img src={ALogo} alt="A Logo" className="header__logo-img" />
+        <img src={S} alt="A Logo" className="header__logo-img" />
+        <img src={A} alt="A Logo" className="header__logo-img" />
       </div>
       <nav className="header__nav">
         <Link to="/" className="header__nav-Link">

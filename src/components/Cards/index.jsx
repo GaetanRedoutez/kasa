@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom"
-import { rentals } from "../../utils/data/rentals.js"
+import { rentals } from "../../data/rentals.js"
 
-function Cards({ sectionName }) {
+function Cards() {
   return (
-    <section className={sectionName}>
+    <section className="cards">
       {rentals.map((rental) => (
         <Link
           to={`/rental/${rental.id}`}
           key={rental.id}
-          className={sectionName + "-Link"}
+          className="cards__Link"
+          style={{ backgroundImage: `url(${rental.cover})` }}
         >
-          <article
-            className={sectionName + "-Link-article"}
-            style={{ backgroundImage: `url(${rental.cover})` }}
-          >
-            <p className={sectionName + "-Link-article-title"}>
-              {rental.title}
-            </p>
+          <article className="cards__Link-article">
+            <p className="cards__Link-article-title">{rental.title}</p>
           </article>
         </Link>
       ))}
