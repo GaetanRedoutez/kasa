@@ -3,13 +3,18 @@
   height: 415px;
   position: relative;
   z-index: 0;
-
+  @include respond-to("small") {
+    height: 255px;
+  }
   &__picture {
     width: 100%;
     height: 415px;
     object-fit: cover;
     border-radius: 25px;
     z-index: 0;
+    @include respond-to("small") {
+      height: 255px;
+    }
   }
 
   &__arrow {
@@ -19,7 +24,9 @@
     justify-content: space-between;
     position: absolute;
     top: 0;
-
+    @include respond-to("small") {
+      height: 255px;
+    }
     &-prev,
     &-next {
       position: absolute;
@@ -29,6 +36,11 @@
       background-color: transparent;
       cursor: pointer;
       padding: 0;
+      &-img {
+        @include respond-to("small") {
+          width: 24px;
+        }
+      }
     }
 
     &-prev {
@@ -50,7 +62,9 @@
     font-weight: 500;
     line-height: 26px;
     color: white;
-
     padding-bottom: 10px;
+    @include respond-to("small") {
+      display: none;
+    }
   }
 }

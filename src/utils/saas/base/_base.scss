@@ -38,10 +38,13 @@ a {
 
 .content {
   width: 100%;
-  max-width: $max-width;
+  max-width: $max-width-desktop;
   margin: 0 auto 50px auto;
   padding-left: 20px;
   padding-right: 20px;
+  @include respond-to("small") {
+    max-width: $max-width-mobile;
+  }
 }
 
 .visible {

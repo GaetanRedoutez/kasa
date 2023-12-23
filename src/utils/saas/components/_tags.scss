@@ -3,6 +3,9 @@
   grid-template-columns: repeat(5, 1fr);
   place-items: center;
   column-gap: 15px;
+  @include respond-to("small") {
+    grid-template-columns: repeat(3, 1fr);
+  }
   &__tag {
     min-width: 95px;
     width: fit-content;
@@ -17,5 +20,10 @@
     align-items: center;
     justify-content: center;
     padding: 0 10px;
+    @include respond-to("small") {
+      font-size: 10px;
+      line-height: 1em;
+      height: 15px;
+    }
   }
 }

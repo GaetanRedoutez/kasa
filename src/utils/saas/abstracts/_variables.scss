@@ -14,7 +14,8 @@ $black: #000000;
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1440px !default;
+$max-width-mobile: 100vw !default;
+$max-width-desktop: 1440px !default;
 
 /// Box shadow style
 /// @type BoxShadow
@@ -32,6 +33,6 @@ $linear-gradient1: linear-gradient(
 /// Breakpoint media queries
 $breakpoints: (
   "small": (
-    max-width: 800px,
+    max-width: 768px,
   ),
 );

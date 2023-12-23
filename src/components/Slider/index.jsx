@@ -41,13 +41,21 @@ function Carousel({ selectedRental, componentClassName }) {
           className={`${componentClassName}-arrow-prev slider__arrow-prev`}
           onClick={prevIndex}
         >
-          <img src={leftArrowDesktop} alt="Previous" />
+          <img
+            src={leftArrowDesktop}
+            alt="Previous"
+            className="slider__arrow-prev-img"
+          />
         </button>
         <button
           className={`${componentClassName}-arrow-next slider__arrow-next`}
           onClick={nextIndex}
         >
-          <img src={rightArrowDesktop} alt="Next" />
+          <img
+            src={rightArrowDesktop}
+            alt="Next"
+            className="slider__arrow-next-img"
+          />
         </button>
       </div>
 

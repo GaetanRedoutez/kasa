@@ -9,10 +9,10 @@ function Header() {
   return (
     <header className="header">
       <div className="header__logo">
-        <img src={K} alt="A Logo" className="header__logo-img" />
-        <img src={ALogo} alt="A Logo" className="header__logo-img" />
-        <img src={S} alt="A Logo" className="header__logo-img" />
-        <img src={A} alt="A Logo" className="header__logo-img" />
+        <img src={K} alt="A Logo" className="header__logo-img K" />
+        <img src={ALogo} alt="A Logo" className="header__logo-img ALogo" />
+        <img src={S} alt="A Logo" className="header__logo-img S" />
+        <img src={A} alt="A Logo" className="header__logo-img A" />
       </div>
       <nav className="header__nav">
         <Link to="/" className="header__nav-Link">

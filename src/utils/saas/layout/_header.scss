@@ -3,22 +3,57 @@
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
-
   &__logo {
+    @include flex-row();
+    align-items: end;
+    width: max-content;
     &-img {
       margin-right: 10px;
     }
   }
   &__nav {
     &-Link {
-      font-size: 24px;
-      font-weight: 500;
       color: $primary-color;
       text-decoration: none;
+      font-weight: 500;
+      font-size: 24px;
       padding-left: 57px;
       &:hover {
         text-decoration: underline;
       }
+
+      @include respond-to("small") {
+        font-size: 12px;
+        padding-left: 25px;
+        text-transform: uppercase;
+      }
     }
+  }
+
+  @include respond-to("small") {
+  }
+}
+
+.K {
+  @include respond-to("small") {
+    max-width: 38px;
+  }
+}
+
+.ALogo {
+  @include respond-to("small") {
+    max-width: 32px;
+  }
+}
+
+.S {
+  @include respond-to("small") {
+    max-width: 27px;
+  }
+}
+
+.A {
+  @include respond-to("small") {
+    max-width: 28px;
   }
 }

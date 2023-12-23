@@ -35,23 +35,24 @@ function Rental() {
           <span className="rental__info--text-location">
             {selectedRental.location}
           </span>
-        </div>
-
-        <div className="rental__info-host">
-          <div className="rental__info-host-name">
-            {selectedRental.host.name}
-          </div>
-          <img
-            src={selectedRental.host.picture}
-            className="rental__info-host-picture"
-            alt={selectedRental.host.name}
+          <Tags
+            tags={selectedRental.tags}
+            className="rental__info--text-tagsList"
           />
         </div>
-      </div>
-
-      <div className="rental__info2">
-        <Tags tags={selectedRental.tags} className="rental__info2-tagsList" />
-        <Rating rating={starArray} className="rental__info2-rating" />
+        <div className="rental__info--host">
+          <div className="rental__info--host-data">
+            <div className="rental__info--host-data-name">
+              {selectedRental.host.name}
+            </div>
+            <img
+              src={selectedRental.host.picture}
+              className="rental__info--host-data-picture"
+              alt={selectedRental.host.name}
+            />
+          </div>
+          <Rating rating={starArray} className="rental__info--host-rating" />
+        </div>
       </div>
 
       <div className="rental__dropdown">
