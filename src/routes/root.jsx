@@ -19,6 +19,7 @@ function Root() {
             <Route path="/about" element={<About />} />
             <Route path="/rental/:id" element={<Rental />} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path="/error" element={<ErrorPage />} />
           </Routes>
         </div>
         <Footer />

@@ -5,7 +5,7 @@
   padding: 40px 0;
   &__logo {
     @include flex-row();
-    align-items: end;
+    align-items: flex-end;
     width: max-content;
     &-img {
       margin-right: 10px;

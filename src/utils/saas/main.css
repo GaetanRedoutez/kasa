@@ -380,7 +380,7 @@ ul {
 .header__logo {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  align-items: flex-end;
   width: -moz-max-content;
   width: max-content;
 }

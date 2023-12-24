@@ -1,24 +1,29 @@
-import { useParams } from "react-router"
+import { useParams, Navigate } from "react-router-dom"
 
 import { rentals } from "../../data/rentals.js"
 
 import emptyStar from "../../assets/images/emptyStar.svg"
 import filledStar from "../../assets/images/filledStar.svg"
 
-import Slider from "../../components/Slider/index.jsx"
 import DropDown from "../../components/DropDown/index.jsx"
-import Tags from "../../components/Tags/index.jsx"
 import Rating from "../../components/Rating/index.jsx"
+import Slider from "../../components/Slider/index.jsx"
+import Tags from "../../components/Tags/index.jsx"
 
 function Rental() {
   const { id } = useParams()
+  const idExist = rentals.some((rental) => rental.id === id)
 
-  const selectedRental = [...rentals].find((rental) => rental.id === id)
+  if (!idExist) {
+    return <Navigate to="/error" />
+  }
+
+  const selectedRental = rentals.find((rental) => rental.id === id)
 
   const initalRating = new Array(5).fill(null)
   const ratingNumber = +selectedRental.rating
 
-  const starArray = initalRating.map((element, index) =>
+  const starArray = initalRating.map((_, index) =>
     index <= ratingNumber - 1 ? filledStar : emptyStar
   )
 
