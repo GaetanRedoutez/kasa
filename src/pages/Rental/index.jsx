@@ -10,32 +10,46 @@ import Rating from "../../components/Rating/index.jsx"
 import Slider from "../../components/Slider/index.jsx"
 import Tags from "../../components/Tags/index.jsx"
 
+/**
+ * Component for displaying details of a rental.
+ * It includes a slider for images, rental information, host details, and dropdowns for description and equipment.
+ *
+ * @returns {JSX.Element} - The rendered Rental component.
+ */
 function Rental() {
+  // Get the rental id from the route parameters
   const { id } = useParams()
+
+  // Check if the rental with the given id exists
   const idExist = rentals.some((rental) => rental.id === id)
 
+  // Redirect to error page if the rental id does not exist
   if (!idExist) {
     return <Navigate to="/error" />
   }
 
+  // Get the details of the selected rental
   const selectedRental = rentals.find((rental) => rental.id === id)
 
-  const initalRating = new Array(5).fill(null)
+  // Create an array of stars for the rating
+  const initialRating = new Array(5).fill(null)
   const ratingNumber = +selectedRental.rating
-
-  const starArray = initalRating.map((_, index) =>
+  const starArray = initialRating.map((_, index) =>
     index <= ratingNumber - 1 ? filledStar : emptyStar
   )
 
   return (
     <div className="rental">
+      {/* Slider for rental images */}
       <Slider
         selectedRental={selectedRental}
         componentClassName={"rental__carousel"}
       />
 
+      {/* Rental information */}
       <div className="rental__info">
         <div className="rental__info--text">
+          {/* Rental title, location, and tags */}
           <h2 className="rental__info--text-title">{selectedRental.title}</h2>
           <span className="rental__info--text-location">
             {selectedRental.location}
@@ -45,6 +59,8 @@ function Rental() {
             className="rental__info--text-tagsList"
           />
         </div>
+
+        {/* Host information and rating */}
         <div className="rental__info--host">
           <div className="rental__info--host-data">
             <div className="rental__info--host-data-name">
@@ -60,6 +76,7 @@ function Rental() {
         </div>
       </div>
 
+      {/* Dropdowns for description and equipment */}
       <div className="rental__dropdown">
         <DropDown
           name="Description"

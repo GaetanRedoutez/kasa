@@ -3,6 +3,10 @@ import ALogo from "../../assets/logo/whiteLogo.svg"
 import S from "../../assets/logo/whiteS.svg"
 import A from "../../assets/logo/whiteA.svg"
 
+/**
+ * Footer component for the website.
+ * Displays the company logos and copyright information.
+ */
 function Footer() {
   return (
     <footer className="footer">

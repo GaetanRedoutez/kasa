@@ -5,9 +5,14 @@ import ALogo from "../../assets/logo/redLogo.svg"
 import S from "../../assets/logo/redS.svg"
 import A from "../../assets/logo/redA.svg"
 
+/**
+ * Header component for the website.
+ * Displays the company logos and navigation links.
+ */
 function Header() {
   return (
     <header className="header">
+      <h1>Kasa</h1>
       <div className="header__logo">
         <img src={K} alt="A Logo" className="header__logo-img K" />
         <img src={ALogo} alt="A Logo" className="header__logo-img ALogo" />

@@ -2,6 +2,12 @@ import OverlayTitle from "../../components/OverlayTitle"
 import Image from "../../assets/images/about.svg"
 import DropDown from "../../components/DropDown"
 
+/**
+ * Component for the About page.
+ * It includes an overlay title and dropdown sections with information about Kasa.
+ *
+ * @returns {JSX.Element} - The rendered About component.
+ */
 function About() {
   const fiabilityContent = `Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont
   régulièrement vérifiées par nos équipes.`

@@ -57,3 +57,10 @@
     max-width: 28px;
   }
 }
+
+h1 {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+}
