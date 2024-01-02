@@ -1,0 +1,89 @@
+.rental {
+  &__info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @include flex-row();
+    align-items: flex-start;
+    justify-content: space-between;
+    color: $primary-color;
+    @include respond-to("small") {
+      @include flex-col();
+    }
+    &--text {
+      @include respond-to("small") {
+        width: 100%;
+      }
+      &-title {
+        margin: 0;
+        font-size: 36px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        @include respond-to("small") {
+          font-size: 18px;
+        }
+      }
+      &-location {
+        font-size: 18px;
+        font-weight: 500;
+        @include respond-to("small") {
+          font-size: 14px;
+        }
+      }
+      &-tagsList {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    &--host {
+      @include flex-col();
+      align-items: flex-start;
+      @include respond-to("small") {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-data {
+        @include flex-row();
+        align-items: center;
+        padding-bottom: 20px;
+        @include respond-to("small") {
+          padding-bottom: 0;
+        }
+        &-name {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 26px;
+          max-width: 93px;
+          text-align: right;
+          padding-right: 10px;
+          @include respond-to("small") {
+            font-size: 12px;
+          }
+        }
+        &-picture {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          @include respond-to("small") {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  &__dropdown {
+    @include flex-row();
+    width: 100%;
+    column-gap: 10%;
+    @include respond-to("small") {
+      @include flex-col();
+      row-gap: 10px;
+    }
+  }
+}

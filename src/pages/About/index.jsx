@@ -1,5 +1,5 @@
 import OverlayTitle from "../../components/OverlayTitle"
-import Image from "../../assets/images/about.svg"
+import Image from "../../assets/images/about.jpg"
 import DropDown from "../../components/DropDown"
 
 /**

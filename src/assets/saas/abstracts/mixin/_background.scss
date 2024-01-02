@@ -1,0 +1,5 @@
+/// Set properties to fit and cover with a background
+@mixin background-cover() {
+  background-size: cover;
+  background-position: center;
+}

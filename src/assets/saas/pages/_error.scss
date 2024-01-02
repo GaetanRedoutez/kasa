@@ -1,0 +1,38 @@
+.errorPage {
+  @include flex-col();
+  align-items: center;
+  color: $primary-color;
+  &__h2 {
+    font-size: 288px;
+    font-weight: 700;
+    line-height: 411px;
+    margin: 50px;
+    @include respond-to("small") {
+      font-size: 96px;
+      line-height: 137px;
+    }
+  }
+
+  &__text {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 51px;
+    margin: 50px;
+    @include respond-to("small") {
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+    }
+  }
+
+  &__Link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    text-decoration: underline;
+    @include respond-to("small") {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import Cards from "../../components/Cards"
 import OverlayTitle from "../../components/OverlayTitle"
-import Image from "../../assets/images/home.svg"
+import Image from "../../assets/images/home.jpg"
 
 /**
  * Component for the Home page.

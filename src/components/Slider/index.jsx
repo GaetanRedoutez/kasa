@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import leftArrowDesktop from "../../assets/images/leftArrowDesktop.svg"
-import rightArrowDesktop from "../../assets/images/rightArrowDesktop.svg"
+import arrowRight from "../../assets/images/arrow-right.svg"
+import arrowLeft from "../../assets/images/arrow-left.svg"
 
 /**
  * Component for displaying a carousel of images.
@@ -55,7 +55,7 @@ function Carousel({ selectedRental, componentClassName }) {
           onClick={prevIndex}
         >
           <img
-            src={leftArrowDesktop}
+            src={arrowLeft}
             alt="Previous"
             className="slider__arrow-prev-img"
           />
@@ -64,11 +64,7 @@ function Carousel({ selectedRental, componentClassName }) {
           className={`${componentClassName}-arrow-next slider__arrow-next`}
           onClick={nextIndex}
         >
-          <img
-            src={rightArrowDesktop}
-            alt="Next"
-            className="slider__arrow-next-img"
-          />
+          <img src={arrowRight} alt="Next" className="slider__arrow-next-img" />
         </button>
       </div>
 

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import "abstracts/dir";
+
+// 2. Vendors
+@import "vendors/dir";
+
+// 3. Base stuff
+@import "base/dir";
+
+// 4. Layout-related sections
+@import "layout/dir";
+
+// 5. Components
+@import "components/dir";
+
+// 6. Page-specific styles
+@import "pages/dir";

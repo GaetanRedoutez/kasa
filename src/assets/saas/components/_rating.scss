@@ -1,0 +1,13 @@
+.rating {
+  width: 196px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  @include respond-to("small") {
+    width: 98px;
+  }
+  &__star {
+    @include respond-to("small") {
+      width: 18px;
+    }
+  }
+}

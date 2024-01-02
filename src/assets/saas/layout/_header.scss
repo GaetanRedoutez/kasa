@@ -1,0 +1,45 @@
+.header {
+  @include flex-row();
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  &__logo {
+    @include flex-row();
+    align-items: flex-end;
+    width: max-content;
+    &-img {
+      @include respond-to("small") {
+        width: 145px;
+        height: 46.88px;
+      }
+    }
+  }
+  &__nav {
+    &-Link {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 24px;
+      padding-left: 57px;
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include respond-to("small") {
+        font-size: 12px;
+        padding-left: 25px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  @include respond-to("small") {
+  }
+}
+
+h1 {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+}

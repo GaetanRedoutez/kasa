@@ -1,0 +1,17 @@
+/// Theme color
+/// @type Color
+$primary-color: #ff6060;
+$light-grey: #f6f6f6;
+
+/// Basic color
+/// @type Color
+$white: #ffffff;
+$black: #000000;
+
+/// Linear Gradient
+/// @type LinearGradient
+$linear-gradient1: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(0, 0, 0, 0.5) 100%
+);
