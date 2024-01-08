@@ -903,4 +903,12 @@ h1 {
     font-size: 14px;
     line-height: 20px;
   }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
 }/*# sourceMappingURL=main.css.map */
